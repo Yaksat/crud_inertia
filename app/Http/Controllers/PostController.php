@@ -10,4 +10,9 @@ class PostController extends Controller
     {
         return inertia('Post/Index');
     }
+
+    public function create()
+    {
+        return inertia('Post/Create');
+    }
 }
