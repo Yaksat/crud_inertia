@@ -1,5 +1,4 @@
 <template>
-    <div class="w-96 mx-auto pt-8">
         <h1 class="text-lg mb-2">Create</h1>
         <div class="mb-8">
             <Link :href="route('post.index')" class="text-sky-500 text-sm mb-8">Back</Link>
@@ -15,14 +14,17 @@
                 <button class="ml-auto hover:bg-white hover:text-sky-500 border border-sky-500 block text-white p-2 bg-sky-500 rounded-full text-center w-32" type="submit">Store</button>
             </div>
         </form>
-    </div>
 </template>
 
 <script>
 import {Link} from "@inertiajs/inertia-vue3";
+import MainLayout from "@/Layouts/MainLayout.vue";
 
 export default {
     name: "Index",
+
+    layout: MainLayout,
+
     components: {
         Link
     },
