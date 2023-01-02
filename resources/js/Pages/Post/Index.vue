@@ -12,6 +12,11 @@ import {Link} from "@inertiajs/inertia-vue3";
 
 export default {
     name: "Index",
+
+    props: [
+        'posts'
+    ],
+
     components: {
         Link
     }
