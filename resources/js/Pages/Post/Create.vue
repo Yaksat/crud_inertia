@@ -6,9 +6,11 @@
         <form @submit.prevent="store">
             <div class="mb-4">
                 <input v-model="title" class="w-full rounded-full border-gray-400" type="text" placeholder="title">
+                <div class="text-red-600 text-sm" v-if="errors.title">{{ errors.title }}</div>
             </div>
             <div class="mb-4">
                 <textarea v-model="content" class="w-full rounded-full border-gray-400" placeholder="content"></textarea>
+                <div class="text-red-600 text-sm" v-if="errors.content">{{ errors.content }}</div>
             </div>
             <div>
                 <button class="ml-auto hover:bg-white hover:text-sky-500 border border-sky-500 block text-white p-2 bg-sky-500 rounded-full text-center w-32" type="submit">Store</button>
@@ -28,6 +30,10 @@ export default {
     components: {
         Link
     },
+
+    props: [
+        'errors'
+    ],
 
     data() {
       return {
