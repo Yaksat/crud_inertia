@@ -16,6 +16,9 @@
                 <div class="text-sm text-right">
                     <Link class="text-sky-500" :href="route('post.edit', post.id)">Edit</Link>
                 </div>
+                <div class="text-sm text-right">
+                    <p @click="deletePost(post.id)" class="cursor-pointer text-red-500">Delete</p>
+                </div>
 
             </div>
         </div>
@@ -37,6 +40,12 @@ export default {
 
     components: {
         Link
+    },
+
+    methods: {
+        deletePost(id) {
+            this.$inertia.delete(`/posts/${id}`)
+        }
     }
 }
 </script>
